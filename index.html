@@ -1,0 +1,140 @@
+<!--Created by: Cy <3
+(aka: Marnie Tisdale)
+Date Created: 9/23/14
+Last Modified: 9/23/14
+
+Summary: This is a sample of a web page with user interaction. User writes in text box, submits, text moves to right side of page. This reveals matching hidden text on the left side. My Interests Vs. Yours-->
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville|Cantarell|Chewy|Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <!--^my stylesheet for "homegrown" css-->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <!--^ my JavaScript/jQuery file for index.html-->
+
+</head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <center>
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/7/73/Farm-Fresh_star.png">
+                    Submitting User Info reveals Hidden Text
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/7/73/Farm-Fresh_star.png">
+                </center>
+            </div>
+        </div><!--end header-->
+        
+        <div class="jumbotron" id="jumbo">
+            <div class="container">
+                <div class="row">
+                    <center>
+                        <div id="explain">
+                            <button class="button" onclick="Alert.render('Enter your answers in the text boxes provided. Click OK. Your answers will transfer to your list of favorite things, and reveal mine! Click the help buttons if you want some suggestions...!')">Explanation</button>
+                        </div>
+                    </center>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div id="myFaves">
+                            <div id="title">My Favorites</div><br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png">
+                            <label id="left">Blue</label><br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png">
+                            <label id="left2">Science Fiction</label><br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png">
+                            <label id="left3">Italian</label><br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png">
+                            <label id="left4">"Never Again" by NR</label><br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png">
+                            <label id="left5">Coding!</label><br>
+                        </div>
+                    </div><!--end "My favorites" left side of page-->
+                    <div class="col-md-6">
+                        <div id="pgCenter">
+                            <div id="title">Enter your choices here:</div>
+                            <table>
+                                <tr>
+                                    <td><img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png"></td>
+                                    <td><label>Favorite color:</label></td>
+                                    <td><input type="textbox" size="35px" id="txt"></td>
+                                    <td><button class="button" onclick="Alert.render('Colors are pretty. Seriously, who cannot pick one? Red, green, white, pick something already!')">?</button></td>
+                                    <td><button class="button" onclick="accept.acceptText()">OK</button></td>
+                                    <td><button class="button" onclick="deleted.deleteText()">X</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png"></td>
+                                    <td><label>Favorite genre:</label></td>
+                                    <td><input type="textbox" size="35px" id="txt2"></td>
+                                    <td><button  class="button" onclick="Alert.render('Favorite genre of stories, movies, or TV. What is your poison? Horror, Fantasy, Drama...?')">?</button></td>
+                                    <td><button class="button" onclick="accept.acceptText2()">OK</button></td>
+                                    <td><button class="button" onclick="deleted.deleteText2()">X</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png"></td>
+                                    <td><label>Favorite food:</label></td>
+                                    <td><input type="textbox" size="35px" id="txt3"></td>
+                                    <td><button class="button" onclick="Alert.render('Food is yummy. Pick a specific dish, or a broader area like chinese or dessert.')">?</button></td>
+                                    <td><button class="button" onclick="accept.acceptText3()">OK</button></td>
+                                    <td><button class="button" onclick="deleted.deleteText3()">X</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png"></td>
+                                    <td><label>Favorite song:</label></td>
+                                    <td><input type="textbox" size="35px" id="txt4"></td>
+                                    <td><button class="button" onclick="Alert.render('There are lots of good songs out there, if you cannot pick one just use Twinkle Twinkle Little Star.')">?</button></td>
+                                    <td><button class="button" onclick="accept.acceptText4()">OK</button></td>
+                                    <td><button class="button" onclick="deleted.deleteText4()">X</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png"></td>
+                                    <td><label>Favorite thing:</label></td>
+                                    <td><input type="textbox" size="35px" id="txt5"></td>
+                                    <td><button class="button" onclick="Alert.render('Time to just pick something silly. You can have lots and lots of favorite things, choose silly cat memes or little kids giggles!')">?</button></td>
+                                    <td><button class="button" onclick="accept.acceptText5()">OK</button></td>
+                                    <td><button class="button" onclick="deleted.deleteText5()">X</button></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div><!--end user input/center section of page-->
+                    <div class="col-md-3">
+                        <div id="urFaves">
+                            <div id="title">Your choices</div><br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png">
+                            <label id="right"></label><br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png">
+                            <label id="right2"></label><br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png">
+                            <label id="right3"></label><br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png">
+                            <label id="right4"></label><br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/5/57/Farm-Fresh_bullet_star.png">
+                            <label id="right5"></label><br>
+                        </div>
+                    </div><!--end "Your Favorites" right side of page-->
+                </div>
+            </div>
+        </div><!--end main section of page-->
+        
+        <div class="footer">
+            <div class="container">
+                <div id="sig" class="pull-left"><a href="mailto:marnie_tisdale@yahoo.com">By: Cy &lt;3</a></div>
+                <div id="copy" class="pull-right">2014 &copy;</div>
+            </div>
+        </div><!--end footer-->
+        
+        <!--placeholders to put dialog and screen overlay into-->
+    <div id="boxoverlay"></div>
+    <div id="boxholder"></div>
+        
+    </body>
+</html>
